@@ -44,11 +44,11 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings_outlined),
+            icon: const Icon(Icons.account_circle_outlined),
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const AccountPage()),
-              );
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (_) => const AccountPage()));
             },
           ),
         ],
@@ -99,16 +99,10 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-              const SliverToBoxAdapter(
-                child: BannerSlider(),
-              ),
-              const SliverToBoxAdapter(
-                child: SizedBox(height: 16),
-              ),
+              const SliverToBoxAdapter(child: BannerSlider()),
+              const SliverToBoxAdapter(child: SizedBox(height: 16)),
               ProductGrid(products: filteredProducts),
-              const SliverToBoxAdapter(
-                child: SizedBox(height: 16),
-              ),
+              const SliverToBoxAdapter(child: SizedBox(height: 16)),
             ],
           );
         },
